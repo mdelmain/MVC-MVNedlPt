@@ -14,13 +14,22 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace(`/post/${post_id}`);
     } else {
       alert("Failed to create comment");
     }
   }
 };
 
+const addComment = async (event) => {
+    document.querySelector("#comment-form").classList.remove('hidden');
+    document.querySelector('#add-comment-btn').classList.add('hidden');
+};
+
 document
   .querySelector(".new-comment-form")
   .addEventListener("submit", newFormHandler);
+
+document
+   .querySelector("#add-comment-btn")
+   .addEventListener("click",addComment)

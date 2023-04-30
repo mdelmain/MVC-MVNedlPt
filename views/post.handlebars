@@ -4,7 +4,17 @@
     <p>{{post.user.name}}</p>
 </section>
 
-<section class="hidden">
+{{#each post.comments as |comment|}}
+<section class="card">
+   <p>
+   {{comment.content}}
+   </p>
+</section>
+ {{/each}}
+
+<button type="button" class="btn btn-primary" id="add-comment-btn">Add Comment</button>
+
+<section class="hidden" id="comment-form">
     <form class="form new-comment-form">
       <div class="form-group">
         <label for="content">content:</label>
@@ -15,7 +25,7 @@
       </div>
       <input class="hidden" name="post_id" type="text" value="{{post.id}}" id="post_id" />
     </form>
-
 </section>
+
 
 <script src="/js/comment.js"></script>
