@@ -1,8 +1,11 @@
 <section class="card">
-  <a href="/post/{{id}}">
-    <header>{{title}}</header>
-    <p>{{content}}</p>
-    <p>{{user.name}}</p>
+    <div class="card-header display-flex justify-space-between">
+        <h3><a href="/post/{{id}}">{{title}}</a></h3>
+        <span>Posted by {{user.name}} on {{format_date date_created}}</span>
+    </div>
+    <div class="card-body">
+        <p>{{content}}</p>
+    </div>
   </a>
 </section>
 

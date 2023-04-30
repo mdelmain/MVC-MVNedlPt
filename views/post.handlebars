@@ -1,31 +1,44 @@
-<section class="container">
-    <h3>{{post.title}}</h3>
-    <p>{{post.content}}</p>
-    <p>{{post.user.name}}</p>
+<section class="card">
+    <div class="card-header display-flex justify-space-between">
+        <h3>{{post.title}}</h3>
+        <span>Posted by {{post.user.name}} on {{format_date post.date_created}}</span>
+    </div>
+    <div class="card-body">
+        <p>{{post.content}}</p>
+    </div>
 </section>
 
 {{#each post.comments as |comment|}}
 <section class="card">
-   <p>
-   {{comment.content}}
-   </p>
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <p>{{comment.content}}</p>
+        <p>-{{comment.user.name}}, {{format_date comment.date_created}}</p>
+    </div>
 </section>
  {{/each}}
 
+{{#if logged_in}}
 <button type="button" class="btn btn-primary" id="add-comment-btn">Add Comment</button>
 
-<section class="hidden" id="comment-form">
-    <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="content">content:</label>
-        <textarea class="form-input" id="content" name="content"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-      <input class="hidden" name="post_id" type="text" value="{{post.id}}" id="post_id" />
-    </form>
+<section class="hidden card" id="comment-form">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <form class="form new-comment-form">
+          <div class="form-group">
+            <label for="content">Comment</label>
+            <textarea class="form-input" id="content" name="content"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+          <input class="hidden" name="post_id" type="text" value="{{post.id}}" id="post_id" />
+        </form>
+    </div>
 </section>
 
 
 <script src="/js/comment.js"></script>
+{{/if}}
