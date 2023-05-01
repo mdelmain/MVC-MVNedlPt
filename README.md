@@ -1,9 +1,9 @@
 # 14 Model-View-Controller
 
 ## Description 
-For the module 14 assignment I built an blog style site using JavaScript and handlebars. The user login information, blog posts and comments are stored in a MYSQL database. The application uses Sequelize to connect to the database and users can create, update, and delete their blog posts.
+For the module 14 assignment I built a blog style site using JavaScript and handlebars. The user login information, blog posts and comments are stored in a MYSQL database. The application uses Sequelize to connect to the database and users can create, update, and delete their blog posts.
 
-URL of deployed application:
+URL of deployed application: https://hidden-basin-84436.herokuapp.com/
 
 ## Installation
 N/A
