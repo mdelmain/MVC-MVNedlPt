@@ -62,16 +62,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const addPost = async (event) => {
+const addPost = async () => {
   document.querySelector("#post-form").classList.remove("hidden");
   document.querySelector("#add-post-btn").classList.add("hidden");
 };
 
 const editPost = async (event) => {
-    console.log({test: event.target});
     const element = event.target;
     const post_id = element.dataset.id;
-    console.log({post_id})
 
     document.querySelector(`#card-${post_id} .card-body`).classList.remove("hidden");
 }

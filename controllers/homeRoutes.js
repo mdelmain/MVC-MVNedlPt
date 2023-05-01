@@ -71,7 +71,7 @@ router.get("/post/:id", async (req, res) => {
         },
       ],
     });
-    console.info({ postData });
+    
     const post = postData.get({ plain: true });
 
     res.render("post", {
